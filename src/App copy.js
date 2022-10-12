@@ -66,11 +66,11 @@ const App = () => {
                         <ReactFullpage.Wrapper>
                             <div className="section">
                                 <div className='inner'>
-                                    <p>첫번째 페이지라우</p>
-                                    {/* <a href='#pf01'>01</a> */}
-                                    {/* <button onClick={() => fullpageApi.moveSectionDown()}>
+                                    <p>Section 1 (welcome to fullpage.js)</p>
+                                    <a href='#pf01'>01</a>
+                                    <button onClick={() => fullpageApi.moveSectionDown()}>
                                         Click me to move down
-                                    </button> */}
+                                    </button>
                                 </div>
                             </div>
                             {
@@ -88,7 +88,7 @@ const App = () => {
                                 })
                             }
                             <div className="section">
-                                <p className='inner'>마지막 페이지구만 그려</p>
+                                <p className='inner'>Section 2</p>
                             </div>
                         </ReactFullpage.Wrapper>
                     );

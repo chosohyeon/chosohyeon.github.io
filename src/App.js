@@ -88,7 +88,7 @@ const App = () => {
                                 })
                             }
                             <div className="section">
-                                <p className='inner'>마지막 페이지구만 그려</p>
+                                <p className='inner'>마지막 페이지구만 그려 여기다가 프로필을 넣어주면 되겠구만</p>
                             </div>
                         </ReactFullpage.Wrapper>
                     );

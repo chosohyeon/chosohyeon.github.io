@@ -58,6 +58,7 @@
         elJoinbutton.disabled = true;
 
         //아이디 입력창에 글자를 키보드로 입력할 때, 성공메시지와 실패메시지를 보여주는 함수
+        // onkeyup : 키를 눌렀다가 땠을 때 이벤트이다 (onkeydown 에서 인식하는 키들을 인식 한다).
         elInputUsername.onkeyup = function () {
             if (isMoreThan4Length(elInputUsername.value)) {
                 elSuccessmessage.classList.remove('hide')

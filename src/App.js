@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactFullpage from '@fullpage/react-fullpage';
-import data from './portfolioDATA';
+import data from './data';
 import './reset.css';
 import './main.scss';
 
@@ -29,14 +29,17 @@ const App = () => {
     }
 
     return (
-        <div className='FP'>
+        <div className='PF'>
             <Cover />
-            <header>
-                2023 hyeon portfolio {num} {con}
+            <header className='header'>
+                {/* 2023 hyeon portfolio {num} {con} */}
+                2022 WEB<br />PORTFOLIO
             </header>
+            {/* 커버 오픈 버튼 */}
             <button onClick={() => setOn(!on)} className={`cover_open ${on ? 'on' : ''}`}>
                 <span>cover out</span>
             </button>
+            {/* 오른쪽 페이지 이동 버튼 */}
             <nav className='gnb'>
                 <ul>
                     {
@@ -66,22 +69,45 @@ const App = () => {
                         <ReactFullpage.Wrapper>
                             <div className="section">
                                 <div className='inner'>
-                                    <p>첫번째 페이지라우</p>
-                                    {/* <a href='#pf01'>01</a> */}
-                                    {/* <button onClick={() => fullpageApi.moveSectionDown()}>
-                                        Click me to move down
-                                    </button> */}
+                                    <div className='title_box'>
+                                        <h1 className='title'>FORTFOLIO TITLE</h1>
+                                        <p className='sub_title'>Sub title sub title sub title sub title sub title sub title sub title</p>
+                                        <div className='desc'>
+                                            <p>titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle</p>
+                                            <p>titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle</p>
+                                            <p>titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             {
                                 data.map(it => {
                                     return (
-                                        <div className="section">
+                                        <div className="pfpages section">
                                             <div className='inner'>
-                                                <p>{it.id}</p>
-                                                {
-                                                    data.color?.map(color => <li style={{ background: color }}>{color}</li>)
-                                                }
+                                                <div className='page'>
+                                                    {/* {
+                                                        data.color?.map(color => <li style={{ background: color }}>{color}</li>)
+                                                    } */}
+                                                    <div className='img'>여기에 이미지가 들어갑니다.</div>
+                                                    <h2><p>0{it.id}</p>. Portfolio project title</h2>
+                                                    <div className='info_box'>
+                                                        <div className='left'>
+                                                            <h3>INFO</h3>
+                                                            <p>브랜드의 원래 로고나 제품 패키지 디자인을 참고하여, 모던하고 딥한 이미지를 고취시킬 수 있는 다크모드로 디자인 했습니다.<br />전체적으로 무채색을 사용하여 브랜드의 정체성을 드러냈고, 첫번째 섹션은 브랜드만이 가지고 있는 특이점 이라고 생각해<br />타이포그라피와 색감을 이용해 디자인했습니다.</p>
+                                                            <button>LINK</button>
+                                                        </div>
+                                                        <div className='right'>
+                                                            <h3>TYPE</h3>
+                                                            <p>Responsive Web</p>
+                                                            <h3>FONT</h3>
+                                                            <p>Noto Sans, Pretendard</p>
+                                                            <h3>TOOLS</h3>
+                                                            <p>html, css, javascript </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                     )
@@ -94,6 +120,9 @@ const App = () => {
                     );
                 }}
             />
+            <footer className='Footer'>
+                &copy; sohyeon 2022
+            </footer>
         </div>
     )
 }

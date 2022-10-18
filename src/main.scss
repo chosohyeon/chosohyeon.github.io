@@ -47,13 +47,19 @@ body {
     .title_box {
         display: inline-block;
         position: relative;
-        top: 20%;
-        left: 15%;
+        top: 25%;
+        left: 12%;
 
         .title {
-            font-size: 9rem;
+            font-size: 11rem;
             font-weight: 700;
             margin-bottom: 30px;
+            color: rgb(0, 0, 0);
+
+            p{
+                display: inline-block;
+                color: #ffab00;
+            }
         }
 
         ::before {}

@@ -33,7 +33,7 @@ const App = () => {
             <Cover />
             <header className='header'>
                 {/* 2023 hyeon portfolio {num} {con} */}
-                2022 WEB<br />PORTFOLIO
+                2022 WEB<br />FRONTEND<br />PORTFOLIO
             </header>
             {/* 커버 오픈 버튼 */}
             <button onClick={() => setOn(!on)} className={`cover_open ${on ? 'on' : ''}`}>
@@ -70,8 +70,9 @@ const App = () => {
                             <div className="section">
                                 <div className='inner'>
                                     <div className='title_box'>
-                                        <h1 className='title'>FORTFOLIO TITLE</h1>
-                                        <p className='sub_title'>Sub title sub title sub title sub title sub title sub title sub title</p>
+                                        {/* <h1 className='title'>FORTFOLIO TITLE</h1> */}
+                                        <h1 className='title'><p>W</p>EB <p>W</p>ORLD <p>W</p>INDOW</h1>
+                                        <p className='sub_title'>두 세상을 연결하는 프론트엔드 개발자 소현입니다.</p>
                                         <div className='desc'>
                                             <p>titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle</p>
                                             <p>titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle</p>
@@ -102,12 +103,12 @@ const App = () => {
                                                             <p>Responsive Web</p>
                                                             <h3>FONT</h3>
                                                             <p>Noto Sans, Pretendard</p>
-                                                            <h3>TOOLS</h3>
+                                                            <h3>SKILLS</h3>
                                                             <p>html, css, javascript </p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                     )

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import ReactFullpage from '@fullpage/react-fullpage';
-import data from './data';
+import data from './Data';
 import './reset.css';
-import './main.scss';
+import './Main.scss';
 
 const App = () => {
     const [num, setNum] = useState(1);
@@ -33,7 +33,7 @@ const App = () => {
             <Cover />
             <header className='header'>
                 {/* 2023 hyeon portfolio {num} {con} */}
-                2022 WEB<br />FRONTEND<br />PORTFOLIO
+                2023 WEB FRONTEND PORTFOLIO
             </header>
             {/* 커버 오픈 버튼 */}
             <button onClick={() => setOn(!on)} className={`cover_open ${on ? 'on' : ''}`}>
@@ -68,15 +68,14 @@ const App = () => {
                     return (
                         <ReactFullpage.Wrapper>
                             <div className="section">
-                                <div className='inner'>
-                                    <div className='title_box'>
-                                        {/* <h1 className='title'>FORTFOLIO TITLE</h1> */}
-                                        <h1 className='title'><p>W</p>EB <p>W</p>ORLD <p>W</p>INDOW</h1>
-                                        <p className='sub_title'>두 세상을 연결하는 프론트엔드 개발자 소현입니다.</p>
-                                        <div className='desc'>
-                                            <p>titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle</p>
-                                            <p>titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle</p>
-                                            <p>titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle</p>
+                                <div className='titleInner'>
+                                    <div className='titleBox'>
+                                        <div className='roundBox'>
+                                            <img className='titleBg' src={process.env.PUBLIC_URL + '/img/background.png'} alt="background" />
+                                            <h1 className='title'>
+                                                <div>F<p>RON</p>T<p>END</p></div>
+                                                <div>P<p>ORT</p>F<p>OLIO</p></div>
+                                            </h1>
                                         </div>
                                     </div>
                                 </div>
@@ -87,28 +86,34 @@ const App = () => {
                                         <div className="pfpages section">
                                             <div className='inner'>
                                                 <div className='page'>
-                                                    {/* {
-                                                        data.color?.map(color => <li style={{ background: color }}>{color}</li>)
-                                                    } */}
-                                                    <div className='img'>여기에 이미지가 들어갑니다.</div>
-                                                    <h2><p>0{it.id}</p>. Portfolio project title</h2>
-                                                    <div className='info_box'>
-                                                        <div className='left'>
-                                                            <h3>INFO</h3>
-                                                            <p>브랜드의 원래 로고나 제품 패키지 디자인을 참고하여, 모던하고 딥한 이미지를 고취시킬 수 있는 다크모드로 디자인 했습니다.<br />전체적으로 무채색을 사용하여 브랜드의 정체성을 드러냈고, 첫번째 섹션은 브랜드만이 가지고 있는 특이점 이라고 생각해<br />타이포그라피와 색감을 이용해 디자인했습니다.</p>
-                                                            <button>LINK</button>
+                                                    <div className='left'>
+
+                                                    </div>
+                                                    <div className='right'>
+                                                        <div className='descBox'>
+                                                            <p className='pfNum'>PORTFOLIO - 0{it.id}</p>
+                                                            <h2 className='pfTit'>{it.title}</h2>
+                                                            <h3 className='subTit'>INFO</h3>
+                                                            <p className='desc'>{it.info}</p>
+                                                            <h3 className='subTit'>TYPE</h3>
+                                                            <p className='desc'>{it.type}</p>
+                                                            <h3 className='subTit'>FONT</h3>
+                                                            <p className='desc'>{it.font}</p>
+                                                            <h3 className='subTit'>SKILLS</h3>
+                                                            <p className='desc'>{it.skill}</p>
                                                         </div>
-                                                        <div className='right'>
-                                                            <h3>TYPE</h3>
-                                                            <p>Responsive Web</p>
-                                                            <h3>FONT</h3>
-                                                            <p>Noto Sans, Pretendard</p>
-                                                            <h3>SKILLS</h3>
-                                                            <p>html, css, javascript </p>
-                                                        </div>
+                                                        <button className='linkBtn'
+                                                            onClick={()=>openLink(it.link)}
+                                                        >
+                                                            LINK
+                                                        </button>
+                                                        {/* <button className='linkBtn'
+                                                            onClick={()=>openLink(it.link)}
+                                                        >
+                                                            GITHUB
+                                                        </button> */}
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     )
@@ -121,11 +126,15 @@ const App = () => {
                     );
                 }}
             />
-            <footer className='Footer'>
-                &copy; sohyeon 2022
-            </footer>
-        </div>
+            <footer footer className='Footer' >
+                & copy; sohyeon 2023
+            </footer >
+        </div >
     )
+}
+
+function openLink(url) {
+    window.open(url);
 }
 
 export default App

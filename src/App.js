@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ReactFullpage from '@fullpage/react-fullpage';
-import data from './Data';
+// import data from './Data';
+import { profile, portfolioData } from "./Data";
 import './reset.css';
 import './Main.scss';
 
@@ -8,37 +9,41 @@ const App = () => {
     const [num, setNum] = useState(1);
     const [con, setCon] = useState('cover');
     const [on, setOn] = useState(false);
-    const ac = data.map(it => it.anchor);
+    const ac = portfolioData.map(it => it.anchor);
 
-    const Cover = () => {
-        return <div className={`cover ${on ? 'on' : ''}`}>
-            <ul>
-                {
-                    data.map((it, idx) => {
-                        return (
-                            <li>
-                                <a href={`#${it.anchor}`} onClick={
-                                    () => setOn(!on)
-                                }>{it.title}</a>
-                            </li>
-                        )
-                    })
-                }
-            </ul>
-        </div>
-    }
+    // const Cover = () => {
+    //     return <div className={`cover ${on ? 'on' : ''}`}>
+    //         <div className='indexBox'>
+    //             <h2 className='indexTitle'>
+    //                 I<p>NDEX</p>
+    //             </h2>
+    //             <ul>
+    //                 {
+    //                     portfolioData.map((it, idx) => {
+    //                         return (
+    //                             <li className='linkList'>
+    //                                 <a href={`#${it.anchor}`} onClick={
+    //                                     () => setOn(!on)
+    //                                 }>0{it.id}. {it.title}</a>
+    //                             </li>
+    //                         )
+    //                     })
+    //                 }
+    //             </ul>
+    //         </div>
+    //     </div>
+    // }
 
     return (
         <div className='PF'>
-            <Cover />
+            {/* <Cover /> */}
             <header className='header'>
-                {/* 2023 hyeon portfolio {num} {con} */}
                 2023 WEB FRONTEND PORTFOLIO
             </header>
             {/* 커버 오픈 버튼 */}
-            <button onClick={() => setOn(!on)} className={`cover_open ${on ? 'on' : ''}`}>
+            {/* <button onClick={() => setOn(!on)} className={`cover_open ${on ? 'on' : ''}`}>
                 <span>cover out</span>
-            </button>
+            </button> */}
             {/* 오른쪽 페이지 이동 버튼 */}
             <nav className='gnb'>
                 <ul>
@@ -73,21 +78,22 @@ const App = () => {
                                         <div className='roundBox'>
                                             <img className='titleBg' src={process.env.PUBLIC_URL + '/img/background.png'} alt="background" />
                                             <h1 className='title'>
-                                                <div>F<p>RON</p>T<p>END</p></div>
-                                                <div>P<p>ORT</p>F<p>OLIO</p></div>
+                                                F<p>RONT</p>E<p>ND</p><br />
+                                                P<p>ORT</p>F<p>OLIO</p>
                                             </h1>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             {
-                                data.map(it => {
+                                portfolioData.map(it => {
                                     return (
                                         <div className="pfpages section">
                                             <div className='inner'>
                                                 <div className='page'>
                                                     <div className='left'>
-
+                                                        <figure className={`thumb0${it.id}`}>
+                                                        </figure>
                                                     </div>
                                                     <div className='right'>
                                                         <div className='descBox'>
@@ -95,23 +101,39 @@ const App = () => {
                                                             <h2 className='pfTit'>{it.title}</h2>
                                                             <h3 className='subTit'>INFO</h3>
                                                             <p className='desc'>{it.info}</p>
-                                                            <h3 className='subTit'>TYPE</h3>
-                                                            <p className='desc'>{it.type}</p>
                                                             <h3 className='subTit'>FONT</h3>
-                                                            <p className='desc'>{it.font}</p>
+                                                            <p className='desc'>
+                                                                {it.font?.map((descFont, idx) => {
+                                                                    return (
+                                                                        <ul key={idx}>
+                                                                            <li>{descFont}</li>
+                                                                        </ul>
+                                                                    );
+                                                                })}
+                                                            </p>
                                                             <h3 className='subTit'>SKILLS</h3>
-                                                            <p className='desc'>{it.skill}</p>
+                                                            <p className='desc'>
+                                                                {it.skill?.map((descSkill, idx) => {
+                                                                    return (
+                                                                        <ul key={idx}>
+                                                                            <li>{descSkill}</li>
+                                                                        </ul>
+                                                                    );
+                                                                })}
+                                                            </p>
                                                         </div>
-                                                        <button className='linkBtn'
-                                                            onClick={()=>openLink(it.link)}
-                                                        >
-                                                            LINK
-                                                        </button>
-                                                        {/* <button className='linkBtn'
-                                                            onClick={()=>openLink(it.link)}
-                                                        >
-                                                            GITHUB
-                                                        </button> */}
+                                                        <div className='btnBox'>
+                                                            <button className='linkBtn'
+                                                                onClick={() => openLink(it.link)}
+                                                            >
+                                                                LINK
+                                                            </button>
+                                                            <button className='linkBtn'
+                                                                onClick={() => openLink(it.git)}
+                                                            >
+                                                                GITHUB
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,15 +142,48 @@ const App = () => {
                                 })
                             }
                             <div className="section">
-                                <p className='inner'>마지막 페이지구만 그려 여기다가 프로필을 넣어주면 되겠구만</p>
+                                <div>
+                                    <h2>{profile.name}</h2>
+                                    <div>
+                                        <h3>PROFILE</h3>
+                                        <ul>
+                                            <li>{profile.email}</li>
+                                            <li>{profile.tel}</li>
+                                        </ul>
+                                        <h3>SKILL</h3>
+                                        <ul>
+                                            <li>
+                                                <h4>언어</h4>
+                                                <ul>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h4>라이브러리 프레임워크</h4>
+                                                <ul>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h4>그래픽</h4>
+                                                <ul>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </ReactFullpage.Wrapper>
                     );
                 }}
             />
-            <footer footer className='Footer' >
-                & copy; sohyeon 2023
-            </footer >
         </div >
     )
 }

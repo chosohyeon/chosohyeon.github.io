@@ -3,7 +3,7 @@ $mainColor: #F0C145;
 $moColor: #f0c24560;
 
 * {
-    // outline: 1px solid tomato;
+    outline: 1px solid tomato;
 }
 
 html {
@@ -52,7 +52,7 @@ body {
                         font-size: 14rem;
                         font-weight: 700;
                         line-height: 12rem;
-                        margin-bottom: 30px;
+                        margin-bottom: 3rem;
                         color: #F0C145;
                         letter-spacing: 0.5rem;
                         text-align: center;
@@ -63,12 +63,6 @@ body {
                             text-shadow: -1px 0 #F0C145, 0 1px #F0C145, 1px 0 #F0C145, 0 -1px #F0C145;
                         }
                     }
-                }
-
-                .sub_title {
-                    font-size: 3rem;
-                    font-weight: 500;
-                    margin-bottom: 1.5rem;
                 }
 
                 .desc {
@@ -165,7 +159,7 @@ body {
                         .desc {
                             font-family: "AppleGothic";
                             font-size: 1.6rem;
-                            line-height: 2.2rem;
+                            line-height: 2.5rem;
                             margin-bottom: 3rem;
                             display: flex;
                             gap: 10px;
@@ -188,6 +182,39 @@ body {
                     }
                 }
             }
+        }
+
+        .profileSection {
+            margin: 0 auto;
+            background-color: aqua;
+
+            .profileName {
+                font-family: 'DM Serif Display';
+                font-size: 7rem;
+                font-weight: 700;
+                margin-bottom: 5rem;
+                color: #F0C145;
+                letter-spacing: 1rem;
+                text-align: center;
+                text-transform: uppercase;
+
+            }
+
+            .profileDesc {
+                display: flex;
+                justify-content: center;
+
+                div {
+                    padding: 0 5rem;
+                    h3 {
+                        font-family: "AppleSDGothicNeo";
+                        font-weight: 600;
+                        font-size: 3rem;
+                        margin-bottom: 0.5rem;
+                    }
+                }
+            }
+
         }
     }
 
@@ -247,68 +274,6 @@ body {
     }
 }
 
-// .cover {
-//     display: none;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     height: 100vh;
-//     background: $bgColor;
-//     color: $mainColor;
-//     z-index: 1000;
-
-//     .indexBox {
-//         position: relative;
-//         // width: 30%;
-//         padding: 5rem;
-//         transform: translate(-50%, -50%);
-//         top: 50%;
-//         left: 50%;
-//         border-top: 3px dashed #F0C145;
-//         border-right: 3px solid #F0C145;
-//         border-bottom: 3px solid #F0C145;
-//         border-left: 3px dashed #F0C145;
-
-//         .indexTitle {
-//             position: absolute;
-//             transform: translate(-50%, -50%);
-//             top: 50%;
-//             left: 50%;
-//             font-family: 'DM Serif Display';
-//             font-size: 8rem;
-//             color: #F0C145;
-//             letter-spacing: 0.5rem;
-//             text-align: center;
-//             background-color: $bgColor;
-
-//             p {
-//                 display: inline-block;
-//                 color: $bgColor;
-//                 text-shadow: -1px 0 #F0C145, 0 1px #F0C145, 1px 0 #F0C145, 0 -1px #F0C145;
-//             }
-//         }
-
-//         ul {
-//             display: flex;
-//             flex-direction: column;
-
-//             .linkList {
-//                 display: inline;
-//                 a{
-//                     font-family: "AppleGothic";
-//                     font-size: 6rem;
-//                     line-height: 8rem;
-//                 }
-//             }
-//         }
-//     }
-
-//     &.on {
-//         display: block;
-//     }
-// }
-
 .header {
     position: fixed;
     font-family: 'Montserrat';
@@ -321,89 +286,6 @@ body {
     letter-spacing: 0.7rem;
     z-index: 1000;
 }
-
-// .cover_open {
-//     position: fixed;
-//     top: 5rem;
-//     right: 5rem;
-//     font-size: 0;
-//     width: 4rem;
-//     height: 4rem;
-//     border: none;
-//     border: 2px solid $mainColor;
-//     border-radius: 0.5rem;
-//     z-index: 1000;
-
-//     &::before {
-//         content: "";
-//         position: absolute;
-//         top: 10px;
-//         left: 6px;
-//         right: 6px;
-//         height: 2px;
-//         border-radius: 2px;
-//         background: $mainColor;
-//         transition: 0.5s;
-//     }
-
-//     &::after {
-//         content: "";
-//         position: absolute;
-//         bottom: 10px;
-//         left: 6px;
-//         right: 6px;
-//         height: 2px;
-//         border-radius: 2px;
-//         background: $mainColor;
-//         transition: 0.5s;
-//     }
-
-//     span {
-//         &::before {
-//             content: "";
-//             position: absolute;
-//             top: calc(50% - 1px);
-//             left: 6px;
-//             right: 6px;
-//             height: 2px;
-//             border-radius: 2px;
-//             background: $mainColor;
-//             transition: 0.5s;
-//         }
-
-//         &::after {
-//             content: "";
-//             position: absolute;
-//             top: calc(50% - 1px);
-//             left: 6px;
-//             right: 6px;
-//             height: 2px;
-//             border-radius: 2px;
-//             background: $mainColor;
-//             transition: 0.5s;
-//         }
-//     }
-// }
-
-// .cover_open.on {
-//     &::before {
-//         display: none;
-//     }
-
-//     &::after {
-//         display: none;
-//     }
-
-//     span {
-//         &::before {
-//             transform: rotate(45deg);
-//         }
-
-//         &::after {
-//             transform: rotate(-45deg);
-//         }
-//     }
-// }
 
 @media (prefers-reduced-motion: no-preference) {
     .titleBg {

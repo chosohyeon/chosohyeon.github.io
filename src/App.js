@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import ReactFullpage from '@fullpage/react-fullpage';
-// import data from './Data';
-import { profile, portfolioData } from "./Data";
+import { profile, portfolioData } from "./data";
 import './reset.css';
 import './Main.scss';
 
@@ -11,40 +10,11 @@ const App = () => {
     const [on, setOn] = useState(false);
     const ac = portfolioData.map(it => it.anchor);
 
-    // const Cover = () => {
-    //     return <div className={`cover ${on ? 'on' : ''}`}>
-    //         <div className='indexBox'>
-    //             <h2 className='indexTitle'>
-    //                 I<p>NDEX</p>
-    //             </h2>
-    //             <ul>
-    //                 {
-    //                     portfolioData.map((it, idx) => {
-    //                         return (
-    //                             <li className='linkList'>
-    //                                 <a href={`#${it.anchor}`} onClick={
-    //                                     () => setOn(!on)
-    //                                 }>0{it.id}. {it.title}</a>
-    //                             </li>
-    //                         )
-    //                     })
-    //                 }
-    //             </ul>
-    //         </div>
-    //     </div>
-    // }
-
     return (
         <div className='PF'>
-            {/* <Cover /> */}
             <header className='header'>
                 2023 WEB FRONTEND PORTFOLIO
             </header>
-            {/* 커버 오픈 버튼 */}
-            {/* <button onClick={() => setOn(!on)} className={`cover_open ${on ? 'on' : ''}`}>
-                <span>cover out</span>
-            </button> */}
-            {/* 오른쪽 페이지 이동 버튼 */}
             <nav className='gnb'>
                 <ul>
                     {
@@ -142,41 +112,71 @@ const App = () => {
                                 })
                             }
                             <div className="section">
-                                <div>
-                                    <h2>{profile.name}</h2>
-                                    <div>
-                                        <h3>PROFILE</h3>
-                                        <ul>
-                                            <li>{profile.email}</li>
-                                            <li>{profile.tel}</li>
-                                        </ul>
-                                        <h3>SKILL</h3>
-                                        <ul>
-                                            <li>
-                                                <h4>언어</h4>
-                                                <ul>
-                                                    <li></li>
-                                                    <li></li>
-                                                    <li></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4>라이브러리 프레임워크</h4>
-                                                <ul>
-                                                    <li></li>
-                                                    <li></li>
-                                                    <li></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4>그래픽</h4>
-                                                <ul>
-                                                    <li></li>
-                                                    <li></li>
-                                                    <li></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                <div className='profileSection'>
+                                    <h2 className='profileName'>{profile.name}</h2>
+                                    <div className='profileDesc'>
+                                        <div className='leftBox'>
+                                            <h3>PROFILE</h3>
+                                            <ul>
+                                                <li>{profile.email}</li>
+                                                <li>{profile.tel}</li>
+                                            </ul>
+                                        </div>
+                                        <div className='rightBox'>
+                                            <h3>SKILLS</h3>
+                                            <ul>
+                                                <li>
+                                                    <h4>Language</h4>
+                                                    {profile.lang.map((el, idx) => {
+                                                        return (
+                                                            <ul key={idx}>
+                                                                <li>{el}</li>
+                                                            </ul>
+                                                        );
+                                                    })}
+                                                </li>
+                                                <li>
+                                                    <h4>Library / FrameWork</h4>
+                                                    {profile.libframe.map((el, idx) => {
+                                                        return (
+                                                            <ul key={idx}>
+                                                                <li>{el}</li>
+                                                            </ul>
+                                                        );
+                                                    })}
+                                                </li>
+                                                <li>
+                                                    <h4>Tools</h4>
+                                                    {profile.tool.map((el, idx) => {
+                                                        return (
+                                                            <ul key={idx}>
+                                                                <li>{el}</li>
+                                                            </ul>
+                                                        );
+                                                    })}
+                                                </li>
+                                                <li>
+                                                    <h4>Graphics</h4>
+                                                    {profile.graphic.map((el, idx) => {
+                                                        return (
+                                                            <ul key={idx}>
+                                                                <li>{el}</li>
+                                                            </ul>
+                                                        );
+                                                    })}
+                                                </li>
+                                                <li>
+                                                    <h4>Others</h4>
+                                                    {profile.others.map((el, idx) => {
+                                                        return (
+                                                            <ul key={idx}>
+                                                                <li>{el}</li>
+                                                            </ul>
+                                                        );
+                                                    })}
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

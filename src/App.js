@@ -73,23 +73,27 @@ const App = () => {
                                                             <p className='desc'>{it.info}</p>
                                                             <h3 className='subTit'>FONT</h3>
                                                             <p className='desc'>
-                                                                {it.font?.map((descFont, idx) => {
-                                                                    return (
-                                                                        <ul key={idx}>
-                                                                            <li>{descFont}</li>
-                                                                        </ul>
-                                                                    );
-                                                                })}
+                                                                <ul>
+                                                                    {it.font?.map((descFont, idx) => {
+                                                                        return (
+                                                                            <li key={idx}>
+                                                                                {descFont}
+                                                                            </li>
+                                                                        );
+                                                                    })}
+                                                                </ul>
                                                             </p>
                                                             <h3 className='subTit'>SKILLS</h3>
                                                             <p className='desc'>
-                                                                {it.skill?.map((descSkill, idx) => {
-                                                                    return (
-                                                                        <ul key={idx}>
-                                                                            <li>{descSkill}</li>
-                                                                        </ul>
-                                                                    );
-                                                                })}
+                                                                <ul>
+                                                                    {it.skill?.map((descSkill, idx) => {
+                                                                        return (
+                                                                            <li key={idx}>
+                                                                                {descSkill}
+                                                                            </li>
+                                                                        );
+                                                                    })}
+                                                                </ul>
                                                             </p>
                                                         </div>
                                                         <div className='btnBox'>
@@ -117,63 +121,102 @@ const App = () => {
                                     <div className='profileDesc'>
                                         <div className='leftBox'>
                                             <h3>PROFILE</h3>
-                                            <ul>
-                                                <li>{profile.email}</li>
-                                                <li>{profile.tel}</li>
+                                            <ul className='profileList'>
+                                                <li>
+                                                    <h4>E-mail</h4>
+                                                    <ul>
+                                                        <li>
+                                                            {profile.email}
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <h4>Tel</h4>
+                                                    <ul>
+                                                        <li>
+                                                            {profile.tel}
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <h4>Github</h4>
+                                                    <ul className='gitList'>
+                                                        <li>
+                                                            <a href={profile.git01} target="_balnk">
+                                                                <i className="xi-github" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href={profile.git02} target="_balnk">
+                                                                <i className="xi-github" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div className='rightBox'>
                                             <h3>SKILLS</h3>
-                                            <ul>
-                                                <li>
+                                            <ul className='skillsList'>
+                                                <li className='subList'>
                                                     <h4>Language</h4>
-                                                    {profile.lang.map((el, idx) => {
-                                                        return (
-                                                            <ul key={idx}>
-                                                                <li>{el}</li>
-                                                            </ul>
-                                                        );
-                                                    })}
+                                                    <ul>
+                                                        {profile.lang.map((el, idx) => {
+                                                            return (
+                                                                <li key={idx}>
+                                                                    {el}
+                                                                </li>
+                                                            );
+                                                        })}
+                                                    </ul>
                                                 </li>
                                                 <li>
                                                     <h4>Library / FrameWork</h4>
-                                                    {profile.libframe.map((el, idx) => {
-                                                        return (
-                                                            <ul key={idx}>
-                                                                <li>{el}</li>
-                                                            </ul>
-                                                        );
-                                                    })}
+                                                    <ul>
+                                                        {profile.libframe.map((el, idx) => {
+                                                            return (
+                                                                <li key={idx}>
+                                                                    {el}
+                                                                </li>
+                                                            );
+                                                        })}
+                                                    </ul>
                                                 </li>
-                                                <li>
+                                                <li className='subList'>
                                                     <h4>Tools</h4>
-                                                    {profile.tool.map((el, idx) => {
-                                                        return (
-                                                            <ul key={idx}>
-                                                                <li>{el}</li>
-                                                            </ul>
-                                                        );
-                                                    })}
+                                                    <ul>
+                                                        {profile.tool.map((el, idx) => {
+                                                            return (
+                                                                <li key={idx}>
+                                                                    {el}
+                                                                </li>
+                                                            );
+                                                        })}
+                                                    </ul>
                                                 </li>
-                                                <li>
+                                                <li className='subList'>
                                                     <h4>Graphics</h4>
-                                                    {profile.graphic.map((el, idx) => {
-                                                        return (
-                                                            <ul key={idx}>
-                                                                <li>{el}</li>
-                                                            </ul>
-                                                        );
-                                                    })}
+                                                    <ul>
+                                                        {profile.graphic.map((el, idx) => {
+                                                            return (
+                                                                <li key={idx}>
+                                                                    {el}
+                                                                </li>
+                                                            );
+                                                        })}
+                                                    </ul>
                                                 </li>
-                                                <li>
+                                                <li className='subList'>
                                                     <h4>Others</h4>
-                                                    {profile.others.map((el, idx) => {
-                                                        return (
-                                                            <ul key={idx}>
-                                                                <li>{el}</li>
-                                                            </ul>
-                                                        );
-                                                    })}
+                                                    <ul>
+                                                        {profile.others.map((el, idx) => {
+                                                            return (
+                                                                <li key={idx}>
+                                                                    {el}
+                                                                </li>
+                                                            );
+                                                        })}
+                                                    </ul>
                                                 </li>
                                             </ul>
                                         </div>

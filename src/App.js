@@ -140,18 +140,11 @@ const App = () => {
                                                 </li>
                                                 <li>
                                                     <h4>Github</h4>
-                                                    <ul className='gitList'>
-                                                        <li>
-                                                            <a href={profile.git01} target="_balnk">
-                                                                <i className="xi-github" />
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href={profile.git02} target="_balnk">
-                                                                <i className="xi-github" />
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    <li>
+                                                        <a href={profile.git} target="_balnk">
+                                                            <i className="xi-github" />
+                                                        </a>
+                                                    </li>
                                                 </li>
                                             </ul>
                                         </div>

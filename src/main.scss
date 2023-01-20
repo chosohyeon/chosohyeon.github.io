@@ -312,20 +312,13 @@ body {
 
                     ul {
                         li {
-                            .gitList {
-                                display: flex;
-                                gap: 1.5rem;
+                            a {
+                                i {
+                                    font-size: 4rem;
+                                    cursor: pointer;
 
-                                li {
-                                    a {
-                                        i {
-                                            font-size: 4rem;
-                                            cursor: pointer;
-
-                                            &:hover {
-                                                color: $mainColor;
-                                            }
-                                        }
+                                    &:hover {
+                                        color: $mainColor;
                                     }
                                 }
                             }

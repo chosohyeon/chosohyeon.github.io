@@ -9,7 +9,7 @@ const portfolioData = [
         link: "https://www.chosohyeon.com/",
         anchor: "pf01",
         img: "thumbnail01.png",
-        git: "https://github.com/Hyeonkkyu/elixir_web"
+        git: "https://github.com/chosohyeon/portfolio_react.git"
     },
     {
         id: 2,
@@ -55,8 +55,7 @@ const profile = {
     name: "chosohyeon",
     email: "sohyeon0723@naver.com",
     tel: "010-6503-6521",
-    git01:"https://github.com/chosohyeon/",
-    git02:"https://github.com/Hyeonkkyu/",
+    git:"https://github.com/chosohyeon/",
     lang: ["HTML5", "CSS3", "JavaScript", "Java"],
     libframe: ["React", "Node.Js"],
     tool: ["IntelliJ", "VsCode"],
